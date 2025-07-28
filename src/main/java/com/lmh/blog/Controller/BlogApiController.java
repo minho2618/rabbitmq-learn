@@ -1,9 +1,12 @@
-package com.packt.cardatabase.domain;
+package com.lmh.blog.Controller;
 
 import jakarta.persistence.*;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RestController;
 
-@Entity
-public class Car {
+@RequiredArgsConstructor
+@RestController
+public class BlogApiController {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -14,9 +17,9 @@ public class Car {
     private int year;
     private int price;
 
-    public Car() {}
+    public BlogApiController() {}
 
-    public Car(String brand, String model, String color, String registerNumber, int year, int price) {
+    public BlogApiController(String brand, String model, String color, String registerNumber, int year, int price) {
         this.brand = brand;
         this.model = model;
         this.color = color;
