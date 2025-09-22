@@ -1,8 +1,8 @@
-package com.lmh.blog.service;
+package com.lmh.rabbitmq.service;
 
-import com.lmh.blog.domain.Article;
-import com.lmh.blog.dto.AddArticleRequest;
-import com.lmh.blog.repository.BlogRepository;
+import com.lmh.rabbitmq.domain.Order;
+import com.lmh.rabbitmq.dto.OrderCreatedEvent;
+import com.lmh.rabbitmq.repository.BlogRepository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class BlogService {
     private final BlogRepository blogRepository;
 
     // 블로그 글 추가 메서드
-    public Article save(AddArticleRequest request) {
+    public Order save(OrderCreatedEvent request) {
         return blogRepository.save(request.toEntity());
     }
 }
