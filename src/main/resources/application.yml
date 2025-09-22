@@ -11,7 +11,7 @@ spring:
     defer-datasource-initialization: true
 
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:rabbitmq
     driver-class-name: org.h2.Driver
     username: sa
     password: password

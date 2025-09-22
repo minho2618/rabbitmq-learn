@@ -1,9 +1,9 @@
-package com.lmh.rabbitmq.Controller;
+package com.lmh.rabbitmq.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lmh.rabbitmq.domain.Order;
 import com.lmh.rabbitmq.dto.OrderCreatedEvent;
-import com.lmh.rabbitmq.repository.BlogRepository;
+import com.lmh.rabbitmq.repository.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest // 테스트용 애플리케이션 컨텍스트
 @AutoConfigureMockMvc // MockMvc 생성 및 자동 구성
-class BlogApiControllerTest {
+class OrderControllerTest {
 
     @Autowired
     protected MockMvc mockMvc;
@@ -36,7 +36,7 @@ class BlogApiControllerTest {
     private WebApplicationContext context;
 
     @Autowired
-    BlogRepository blogRepository;
+    OrderRepository blogRepository;
 
     @BeforeEach // 테스트 실행 전 실행하는 메서드
     public void mockMvcSetup() {
